@@ -1,5 +1,17 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .menu
+    h2 Menu
+    ul.nav.nav-pills
+      li.active
+        a(href="/") Home
+      li
+        a(href="/tarefas") Lista ToDo
+      li
+        a(href="/tarefas/completas") Completas
+  .home
+    p Lista ToDo com Node.js/Express.js e Mongoskin/MongoDB por Gabriel Fernandes.
+    p Source code em&nbsp;
+      a(href='http://github.com/gabrielcyrino/todo-app') github.com/gabrielcyrino/todo-app
+      |.

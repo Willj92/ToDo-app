@@ -1,0 +1,45 @@
+extends layout
+
+block content
+
+  .menu
+    h2 Menu
+    ul.nav.nav-pills
+      li
+        a(href='/') Home
+      li.active
+        a(href='/tarefas') Lista ToDo
+      li
+        a(href="/tarefas/completas") Completas
+  h1= title
+
+  .list
+    .item.add-tarefa
+      div.action
+        form(action='/tarefas', method='post')
+          input(type='hidden', value='true', name='todas_prontas')
+          input(type='hidden', value=locals._csrf, name='_csrf')
+          input(type='submit', class='btn btn-success btn-xs', value='Todas prontas')
+      form(action='/tarefas', method='post')
+        input(type='hidden', value=locals._csrf, name='_csrf')
+        div.name
+          input(type='text', name='name', placeholder='Adicionar nova tarefa')
+        div.delete
+          input.btn.btn-primary.btn-sm(type="submit", value='Adicionar')
+    if (tarefas.length === 0)
+      | Sem tarefas.
+    each tarefa, index in tarefas
+      .item
+        div.action
+          form(action='/tarefas/#{tarefa._id}', method='post')
+            input(type='hidden', value=tarefa._id.toString(), name='id')
+            input(type='hidden', value='true', name='completa')
+            input(type='hidden', value=locals._csrf, name='_csrf')
+            input(type='submit', value='Completa')
+        div.num
+          span=index+1
+            |.&nbsp;
+        div.name
+          span.name=tarefa.name + ' (Criada em: ' + moment(tarefa.dataCriada).format("DD/MM/YYYY") + ')'
+        div.delete
+        a(delete, data-csrf=locals._csrf) Delete

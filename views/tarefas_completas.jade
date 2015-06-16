@@ -1,0 +1,26 @@
+extends layout
+
+block content
+
+  .menu
+    h2 Menu
+    ul.nav.nav-pills
+      li
+        a(href='/') Home
+      li
+        a(href='/tarefas') Lista ToDo
+      li.active
+        a(href="/tarefas/completas") Completas
+
+  h1= title
+
+  .list
+    if (tarefas.length === 0)
+      | Sem tarefas.
+    each tarefa, index in tarefas
+      .item
+        div.num
+          span=index+1
+            |.&nbsp;
+        div.name.tarefa-completa
+          span.name=tarefa.name + ' (Completada em: ' + moment(tarefa.dataCompletada).format("DD/MM/YYYY") + ')'
