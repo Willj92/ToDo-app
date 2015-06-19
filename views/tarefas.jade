@@ -42,4 +42,8 @@ block content
         div.name
           span.name=tarefa.name + ' (Criada em: ' + moment(tarefa.dataCriada).format("DD/MM/YYYY") + ')'
         div.delete
-        a(delete, data-csrf=locals._csrf) Delete
+          form(action="/delete/#{tarefa._id}", method="post")
+            input(type="submit", value="Deletar")
+            //- a(delete, data-csrf=locals._csrf) 
+            
+          
