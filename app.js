@@ -64,12 +64,15 @@ app.param('tarefa_id', function(req, res, next, tarefaId) {
   });
 });
 //mapeamento de rotas
-app.get('/', routes.index);
+app.get('/', function(req,res){
+  res.redirect('index');
+})
+app.get('/index', routes.index);
 app.get('/tarefas', tarefas.list);
 app.post('/tarefas', tarefas.marcaTodasCompletas)
 app.post('/tarefas', tarefas.add);
 app.post('/tarefas/:tarefa_id', tarefas.marcaCompleta);
-app.delete('/tarefas/:tarefa_id', tarefas.del);
+app.post('/tarefas/del/:tarefa_id', tarefas.del);
 app.get('/tarefas/completas', tarefas.completas);
 
 app.all('*', function(req, res){

@@ -60,8 +60,11 @@ exports.marcaCompleta = function(req, res, next) {
 };
 //deleta uma tarefa pelo id
 exports.del = function(req, res, next) {
-  req.db.tarefas.removeById(req.tarefa._id, function(error, count) {
+  console.log('hey');
+  req.db.tarefas.removeById(req.params.tarefa_id, function(error, count) {
+    console.log(error);
     if (error) return next(error);
+    console.log(count);
     if (count !==1) return next(new Error('Algo deu errado!'));
     console.info('Excluida tarefa %s com id=%s completa.', req.tarefa.name, req.tarefa._id);
     res.status(204).send(); //tudo ok, não precisa redirecionar
