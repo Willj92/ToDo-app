@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - "0.12"
+deploy:
+  provider: heroku
+  api_key:
+    secure: 714128d4-8955-409d-9d30-5a79ecfe1d6c
+  app: todolist9000
+  on:
+    repo: gabrielcyrino/todo-app
