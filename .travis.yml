@@ -12,6 +12,6 @@ deploy:
   provider: heroku
   api_key:
     secure: 714128d4-8955-409d-9d30-5a79ecfe1d6c
-  app: todolist9000
+  app: pi7-todo-app
   on:
-    repo: gabrielcyrino/todolist9000
+    repo: gabrielcyrino/todo-app
