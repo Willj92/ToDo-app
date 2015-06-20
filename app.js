@@ -26,7 +26,7 @@ app.use(function(req, res, next) {
   next();
 });
 //define appname com esse nome
-app.locals.appname = 'ToDo App'
+app.locals.appname = 'ToDo App';
 app.locals.moment = require('moment');
 //seta porta do servidor
 app.set('port', process.env.PORT || 3000);
