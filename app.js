@@ -24,7 +24,7 @@ app.use(function(req, res, next) {
   req.db = {};
   req.db.tarefas = db.collection('tarefas');
   next();
-})
+});
 //define appname com esse nome
 app.locals.appname = 'ToDo App'
 app.locals.moment = require('moment');
@@ -53,7 +53,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(function(req, res, next) {
   res.locals._csrf = req.csrfToken();
   return next();
-})
+});
 //verifica se a tarefa existe
 app.param('tarefa_id', function(req, res, next, tarefaId) {
   req.db.tarefas.findById(tarefaId, function(error, tarefa){
@@ -66,7 +66,7 @@ app.param('tarefa_id', function(req, res, next, tarefaId) {
 //mapeamento de rotas
 app.get('/', function(req,res){
   res.redirect('index');
-})
+});
 app.get('/index', routes.index);
 app.get('/tarefas', tarefas.list);
 app.post('/tarefas', tarefas.marcaTodasCompletas)
@@ -77,7 +77,7 @@ app.get('/tarefas/completas', tarefas.completas);
 
 app.all('*', function(req, res){
   res.status(404).send();
-})
+});
 
 if ('development' == app.get('env')) {
   app.use(errorHandler());
