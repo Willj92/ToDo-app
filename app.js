@@ -15,7 +15,7 @@ var errorHandler = require('errorhandler');
 //driver pro mongodb
 var mongoskin = require('mongoskin');
 //conexão com o mongo
-var db = mongoskin.db('mongodb://localhost:27017/todo?auto_reconnect', {safe:true});
+var db = mongoskin.db('mongodb://admin:admin@ds047622.mongolab.com:47622/todo-app', {safe:true});
 
 var app = express();
 
