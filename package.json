@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node app.js"
+    "test": "mocha test/todoapp.js"
   },
   "dependencies": {
     "body-parser": "1.6.6",
