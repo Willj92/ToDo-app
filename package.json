@@ -22,6 +22,7 @@
     "moment": "^2.8.4",
     "mongoskin": "^1.4.4",
     "morgan": "1.2.3",
+    "should": "^7.0.1",
     "static-favicon": "~1.0.0"
   }
 }
