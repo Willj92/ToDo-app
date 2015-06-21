@@ -14,4 +14,4 @@ deploy:
     secure: 714128d4-8955-409d-9d30-5a79ecfe1d6c
   app: pi7-todoapp
   on:
-    repo: gabrielcyrino/todo-app
+    repo: gabrielcyrino/ToDo-app
