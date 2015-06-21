@@ -69,7 +69,7 @@ app.get('/', function(req,res){
 });
 app.get('/index', routes.index);
 app.get('/tarefas', tarefas.list);
-app.post('/tarefas', tarefas.marcaTodasCompletas)
+app.post('/tarefas', tarefas.marcaTodasCompletas);
 app.post('/tarefas', tarefas.add);
 app.post('/tarefas/:tarefa_id', tarefas.marcaCompleta);
 app.post('/tarefas/del/:tarefa_id', tarefas.del);
