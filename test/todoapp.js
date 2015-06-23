@@ -37,15 +37,4 @@ describe('Math', function() {
             (math.multiplicar(0, 0)).should.be.equal(0);
         });
     });
-    describe('Math, dividir', function() {
-        it('deve retornar 2 quando o valor passado for 2 e 1', function() {
-            (math.dividir(2, 1)).should.be.equal(2);
-        });
-        it('deve retornar -1 quando o valor passado for 1 e 2', function() {
-            (math.dividir(-4, 2)).should.be.equal(-2);
-        });
-        it('deve retornar nulo quando o valor passado for 0 e 0', function() {
-            (math.dividir(0, 0)).should.be.equal(NaN);
-        });
-    });
 });
