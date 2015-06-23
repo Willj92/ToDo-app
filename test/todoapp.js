@@ -1,7 +1,7 @@
 process.env.NODE_ENV = process.env.NODE_ENV || 'test';
 
 var should = require("should");
-var math = require('../utilities/matematica');
+var math = require('../util/matematica');
 
 describe('Array', function() {
     describe('Math, somar', function() {
